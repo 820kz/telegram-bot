@@ -1,0 +1,18 @@
+services:
+  bot:
+    image: telegram-bot
+    build: .
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    command: >
+      sh -c "python main.py"
+    restart: unless-stopped
+
+  exporter:
+    build: .
+    volumes:
+      - ./data:/app/data
+    command: >
+      sh -c "while true; do python export_data.py; sleep 300; done"
+    restart: unless-stopped
