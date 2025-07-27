@@ -1,1 +1,12 @@
-.env data/ pycache/ *.db *.csv .DS_Store
+# Файлы окружения
+.env
+
+# Папки и временные файлы
+__pycache__/
+data/
+*.db
+*.csv
+
+# Системные файлы macOS/Windows
+.DS_Store
+Thumbs.db
